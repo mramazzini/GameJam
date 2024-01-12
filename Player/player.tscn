@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3uls567ljip1"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_jhig0"]
+[ext_resource type="Texture2D" uid="uid://dkobbuc4afwf5" path="res://Assets/Images/Firefighter-Fireman-PNG.png" id="2_rj2fh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1ehe"]
+size = Vector2(238, 450)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_jhig0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.3475, 0.379368)
+texture = ExtResource("2_rj2fh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 3)
+shape = SubResource("RectangleShape2D_t1ehe")
