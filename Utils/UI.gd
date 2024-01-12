@@ -16,7 +16,6 @@ func setUI(UIName: String):
 		if current:
 			current.queue_free()
 			current = null
-			Utils.mouseCapture()
 		return
 	var newUI:PackedScene = UIDict[UIName]
 	if newUI:
@@ -24,6 +23,5 @@ func setUI(UIName: String):
 			current.queue_free()
 		current = newUI.instantiate()
 		add_child(current)
-		Utils.mouseVisible()
 	else:
 		push_error("PackedScene ", UIName, " does not exist.")
