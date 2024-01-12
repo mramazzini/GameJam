@@ -7,9 +7,6 @@ func _ready():
 	UIDict = FS.loadScenes("res://UI/")
 	setUI("MainMenu")
 
-func _process(delta):
-	if Input.is_action_just_pressed("esc"):
-		Utils.toggleMouse()
 	
 func setUI(UIName: String):
 	if UIName == "none":
