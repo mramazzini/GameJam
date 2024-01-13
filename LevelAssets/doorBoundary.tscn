@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4fbj3ql4g3a2"]
+
+[ext_resource type="Script" path="res://LevelAssets/doorBoundary.gd" id="1_n12kc"]
+
+[node name="DoorBoundary" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_n12kc")
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]
