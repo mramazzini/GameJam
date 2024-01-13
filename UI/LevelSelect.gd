@@ -14,5 +14,5 @@ func openLevel(level:String):
 	var levelInstance = levelDict[level].instantiate()
 	var world = get_tree().get_first_node_in_group("world")
 	world.add_child(levelInstance)
-	world.currentLevel = level
+
 	get_tree().get_first_node_in_group("UI").setUI("none")
