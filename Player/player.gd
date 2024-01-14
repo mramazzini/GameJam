@@ -1,6 +1,8 @@
 extends CharacterBody2D
-
+class_name Player
 @onready var Health = $Health
+enum weapons {NONE,HOSE,EXTINGUISHER,AXE}
+var weapon:weapons = weapons.NONE
 const speed = 30000.0
 
 
@@ -11,3 +13,4 @@ func _physics_process(delta):
 	velocity = direction * speed * delta
 
 	move_and_slide()
+
