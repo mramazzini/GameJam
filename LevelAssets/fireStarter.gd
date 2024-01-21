@@ -9,8 +9,10 @@ var CELL_SIZE = 64
 @onready var level:TileMap = get_tree().get_first_node_in_group("level")
 @onready var timer:= $Timer
 var fireLight = preload("res://LevelAssets/fireLight.tscn")
+var fireNoise = preload("res://LevelAssets/fireNoise.tscn")
 var fires = []
 var fireState= {}
+var noises = {}
 var fireInstance:PointLight2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,13 +36,25 @@ func spreadFire(x,y):
 		fires.push_front(Vector2i(x, y))
 		fireState[Vector2i(x,y)]= true
 		fireInstance.scale+=Vector2(0.03125,0.03125)
-		fireInstance.energy+=0.01
 
+		fireInstance.energy+0.01
+		var noiseInstance = fireNoise.instantiate()
+		level.add_child.call_deferred(noiseInstance)
+		noiseInstance.position = Vector2(x+0.5,y+0.5) * 64
+		noises[Vector2i(x,y)] = noiseInstance
 
+func clearFire(x,y):
+	if fireState[Vector2i(x,y)]:
+		level.set_cell(0,Vector2i(x,y),2,Vector2i(0,0))
+		fires.remove_at(fires.find(Vector2i(x,y)))
+		if is_instance_valid(noises[Vector2i(x,y)]):
+			noises[Vector2i(x,y)].queue_free()
 
 func getFlammable(x,y):
 	var cell = Vector2i(x,y)
 	var data = level.get_cell_tile_data(0,Vector2i(x,y))
+	if !data: 
+		return false
 	return data.get_custom_data("flammable")
 
 func timerTimeout():

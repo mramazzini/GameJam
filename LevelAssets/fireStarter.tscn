@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://LevelAssets/fireStarter.gd" id="1_1sci6"]
 
-[node name="FireStarter" type="Node2D"]
+[node name="FireStarter" type="Node2D" groups=["fire"]]
 script = ExtResource("1_1sci6")
 
 [node name="Timer" type="Timer" parent="."]

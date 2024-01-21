@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2std35hj6vby" path="res://Assets/Images/2d_lights_and_shadows_neutral_point_light.webp" id="1_n4x33"]
 
-[node name="FireLight" type="PointLight2D"]
+[node name="fire" type="PointLight2D"]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true

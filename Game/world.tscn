@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://dwdn2mp67bq7l"]
+[gd_scene load_steps=2 format=3 uid="uid://dwdn2mp67bq7l"]
+
+[ext_resource type="PackedScene" uid="uid://356rkilfb20n" path="res://Utils/SoundMaster.tscn" id="1_46frj"]
 
 [node name="World" type="Node2D" groups=["world"]]
+
+[node name="SoundMaster" parent="." instance=ExtResource("1_46frj")]

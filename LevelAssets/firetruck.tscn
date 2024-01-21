@@ -1,20 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://be658vvw14ovw"]
 
 [ext_resource type="Script" path="res://LevelAssets/firetruck.gd" id="1_10alh"]
-[ext_resource type="Texture2D" uid="uid://bv5equhs4m1r2" path="res://Assets/Images/81-818720_fire-truck-fire-truck-top-view-png.webp" id="1_y7d15"]
+[ext_resource type="Texture2D" uid="uid://b5lnkvqxh13ot" path="res://Assets/Images/Unit-Firetruck.png" id="2_5j0bx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuw7q"]
 size = Vector2(298, 202)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikti2"]
-size = Vector2(268, 91)
+size = Vector2(185, 91)
 
 [node name="Firetruck" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_10alh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_y7d15")
+rotation = 1.5708
+scale = Vector2(1.50414, 1.50414)
+texture = ExtResource("2_5j0bx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -42)
@@ -24,5 +26,5 @@ shape = SubResource("RectangleShape2D_uuw7q")
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ikti2")

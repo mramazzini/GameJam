@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://356rkilfb20n"]
+[gd_scene load_steps=3 format=3 uid="uid://356rkilfb20n"]
 
 [ext_resource type="Script" path="res://Utils/SoundMaster.gd" id="1_ngshk"]
+[ext_resource type="AudioStream" uid="uid://fg0rnq3gquwy" path="res://Assets/Noise/fire_sfx.wav" id="2_hw7ge"]
 
-[node name="SoundMaster" type="Node2D"]
+[node name="SoundMaster" type="Node2D" groups=["sound"]]
 script = ExtResource("1_ngshk")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hw7ge")
+max_distance = 1000.0
+bus = &"Fire"
