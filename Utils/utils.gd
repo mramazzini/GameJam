@@ -1,8 +1,6 @@
 class_name Utils
 # Helper functions
-
-var banana = 1
-
+enum weapons{NONE,HOSE,EXTINGUISHER,AXE}
 static func between(val,start,end):
 	return val >= start && val < end
 	

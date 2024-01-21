@@ -16,4 +16,4 @@ func playerEntered(player):
 	
 func playerExited(player):
 	playerNearby= false
-	get_tree().get_first_node_in_group("UI").setUI("none")
+	get_tree().get_first_node_in_group("UI").setUI("Overlay")

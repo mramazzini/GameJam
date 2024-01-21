@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bue2p7duffgt8"]
+
+[ext_resource type="Script" path="res://breakerOutside.gd" id="1_ane6c"]
+[ext_resource type="Texture2D" uid="uid://rvagffnyj172" path="res://Assets/Images/tempbreaker.png" id="1_k2kxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrhwf"]
+size = Vector2(128, 120)
+
+[node name="BreakerOutside" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_ane6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2kxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_wrhwf")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

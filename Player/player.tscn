@@ -4,22 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://dkobbuc4afwf5" path="res://Assets/Images/Firefighter-Fireman-PNG.png" id="2_rj2fh"]
 [ext_resource type="PackedScene" uid="uid://dtxsbfy1fder8" path="res://Components/Health.tscn" id="3_pmuef"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1ehe"]
-size = Vector2(238, 450)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlpba"]
+radius = 82.0061
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 4
 script = ExtResource("1_jhig0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, 0)
-scale = Vector2(0.3475, 0.379368)
+scale = Vector2(0.170325, 0.151156)
 texture = ExtResource("2_rj2fh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 3)
-shape = SubResource("RectangleShape2D_t1ehe")
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_jlpba")
 
 [node name="Health" parent="." instance=ExtResource("3_pmuef")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.33, 0.33)
+zoom = Vector2(0.75, 0.75)

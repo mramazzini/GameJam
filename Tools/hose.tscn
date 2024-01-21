@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://djf4benbsy4wk"]
+
+[ext_resource type="PackedScene" uid="uid://i5kteys56qh7" path="res://Tools/hoseSegment.tscn" id="2_hcqvc"]
+[ext_resource type="Script" path="res://Tools/hose.gd" id="2_ipwad"]
+[ext_resource type="Texture2D" uid="uid://bqus035bpg5f" path="res://Assets/Images/circle..png" id="2_mp6c6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvfjj"]
+
+[node name="Hose" type="Node2D"]
+visible = false
+z_index = 3
+script = ExtResource("2_ipwad")
+
+[node name="Base" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+shape = SubResource("RectangleShape2D_dvfjj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Base"]
+scale = Vector2(0.619639, 0.616584)
+texture = ExtResource("2_mp6c6")
+
+[node name="HoseSegment" parent="." instance=ExtResource("2_hcqvc")]
+position = Vector2(88, 0)
+
+[node name="HoseSegment2" parent="." instance=ExtResource("2_hcqvc")]
+position = Vector2(248, 0)
+
+[node name="HoseSegment3" parent="." instance=ExtResource("2_hcqvc")]
+position = Vector2(408, 0)
+
+[node name="HoseSegment4" parent="." instance=ExtResource("2_hcqvc")]
+position = Vector2(568, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(8, 0)
+node_a = NodePath("../Base")
+node_b = NodePath("../HoseSegment")
+bias = 0.9
+angular_limit_enabled = true
+angular_limit_lower = -0.261799
+angular_limit_upper = 0.261799
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(168, 0)
+node_a = NodePath("../HoseSegment")
+node_b = NodePath("../HoseSegment2")
+angular_limit_enabled = true
+angular_limit_lower = -0.261799
+angular_limit_upper = 0.261799
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(328, 0)
+node_a = NodePath("../HoseSegment2")
+node_b = NodePath("../HoseSegment3")
+angular_limit_enabled = true
+angular_limit_lower = -0.261799
+angular_limit_upper = 0.261799
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(488, 0)
+node_a = NodePath("../HoseSegment3")
+node_b = NodePath("../HoseSegment4")
+angular_limit_enabled = true
+angular_limit_lower = -0.261799
+angular_limit_upper = 0.261799
+
+[node name="PlayerConnector" type="PinJoint2D" parent="." groups=["nozzle"]]
+position = Vector2(728, 0)
+node_b = NodePath("../HoseSegment4")

@@ -15,4 +15,4 @@ func openLevel(level:String):
 	var world = get_tree().get_first_node_in_group("world")
 	world.add_child(levelInstance)
 
-	get_tree().get_first_node_in_group("UI").setUI("none")
+	get_tree().get_first_node_in_group("UI").setUI("Overlay")

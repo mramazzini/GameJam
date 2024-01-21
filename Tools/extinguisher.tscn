@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqbprf32382uo"]
+
+[ext_resource type="Texture2D" uid="uid://didm4kdljxjqb" path="res://Assets/Images/Office-Fire-Extinguisher.webp" id="1_crvid"]
+[ext_resource type="Script" path="res://Tools/extinguisher.gd" id="2_0n5mx"]
+
+[node name="Extinguisher" type="Node2D"]
+z_index = 5
+script = ExtResource("2_0n5mx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_crvid")

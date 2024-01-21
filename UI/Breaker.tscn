@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ok5dvgoe2i5"]
+
+[ext_resource type="Script" path="res://UI/breaker.gd" id="1_qetp8"]
+
+[node name="Breaker" type="CanvasLayer"]
+script = ExtResource("1_qetp8")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdasdsadsadsadasdsadsadas"
